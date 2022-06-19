@@ -65,5 +65,5 @@ Each edition has its own branch, named `versions/[VERSION]`. The default branch 
 
     alphaAnimator.start()
   }
-``
+```
 
