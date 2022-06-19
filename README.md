@@ -38,4 +38,32 @@ Each edition has its own branch, named `versions/[VERSION]`. The default branch 
     }
 
 ```
+<img width="406" src="https://user-images.githubusercontent.com/47273077/174467932-8dbb258f-6c0e-41d9-af64-f31f58e97973.gif">
+
+```kt
+  private fun animateLogin() {
+    binding.progressBar.alpha = 0f
+    binding.progressBar.visibility = View.VISIBLE
+
+    var buttonWight = binding.loginButton.width
+    var buttonHeight = binding.loginButton.height
+
+    val alphaAnimator = ValueAnimator.ofFloat(0f,1f)
+    alphaAnimator.duration = 1000
+
+    alphaAnimator.addUpdateListener {
+      val animatedValue = it.animatedValue as Float
+
+      binding.progressBar.alpha = animatedValue
+      binding.loginButton.alpha = 1 - animatedValue * 1.5f
+
+      binding.loginButton.updateLayoutParams {
+        this.height = (buttonHeight * (1f - animatedValue)).toInt()
+        this.width = (buttonWight * (1f - animatedValue)).toInt()
+      }
+    }
+
+    alphaAnimator.start()
+  }
+``
 
