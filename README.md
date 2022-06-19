@@ -70,17 +70,20 @@ Each edition has its own branch, named `versions/[VERSION]`. The default branch 
 <table>
    <tr>
     <td class="DecelerateInterpolator">DecelerateInterpolator</td>
-    <td class="AccelerateInterpolator">DecelerateInterpolator</td>
+    <td class="AccelerateInterpolator">AccelerateInterpolator</td>
+    <td class="BounceInterpolator">BounceInterpolator</td>
   </tr>
   <tr>
     <td valign="top" class="DecelerateInterpolator"><img width="300" src="https://user-images.githubusercontent.com/47273077/174468287-99850692-2576-41d6-a606-f37380f9e8cd.gif"/></td>
     <td valign="top"  class="AccelerateInterpolator"><img width="300"  src="https://user-images.githubusercontent.com/47273077/174468542-af431336-e072-4ce6-8710-139f7dad472e.gif"/></td>
+   <td valign="top"  class="BounceInterpolator"><img width="300"  src="https://user-images.githubusercontent.com/47273077/174468729-e8f95b23-44b7-4803-9251-66430ba9a08f.gif"/></td>
   </tr>
 </table>
 
 ```kt
     alphaAnimator.interpolator = DecelerateInterpolator()
     alphaAnimator.interpolator = AccelerateInterpolator()
+    alphaAnimator.interpolator = BounceInterpolator()
     
 ```
 
