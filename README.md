@@ -69,8 +69,12 @@ Each edition has its own branch, named `versions/[VERSION]`. The default branch 
 
 <table>
   <tr>
-    <td valign="top"><img width="250" src="https://user-images.githubusercontent.com/47273077/174468287-99850692-2576-41d6-a606-f37380f9e8cd.gif"/></td>
-    <td valign="top"><img width="300"  src="https://user-images.githubusercontent.com/47273077/173582564-e0280e77-ee97-4302-af38-4295e4f83010.png"/></td>
+    <td valign="top" class="DecelerateInterpolator"><img width="250" src="https://user-images.githubusercontent.com/47273077/174468287-99850692-2576-41d6-a606-f37380f9e8cd.gif"/></td>
+    <td valign="top" ><img width="300"  src="https://user-images.githubusercontent.com/47273077/173582564-e0280e77-ee97-4302-af38-4295e4f83010.png"/></td>
+  </tr>
+  <tr>
+    <td class="DecelerateInterpolator">DecelerateInterpolator</td>
+    <td class="DecelerateInterpolator">DecelerateInterpolator</td>
   </tr>
 </table>
 
