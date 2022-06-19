@@ -96,3 +96,45 @@ Each edition has its own branch, named `versions/[VERSION]`. The default branch 
     progressBarAlphaAnimator.start()
 ```
 
+
+## Custom Animation
+<img width="406" src="https://user-images.githubusercontent.com/47273077/174476011-2266ec7c-9e3d-4e8e-bd10-da3f74764e02.gif">
+
+```kt
+  @RequiresApi(Build.VERSION_CODES.N)
+  fun transformToProgress() {
+    val drawable = binding.actionButton.background as? GradientDrawable
+    val targetWidth = targetButtonWidth
+    val targetCornerRadius = targetButtonWidth
+
+    val cornerAnimator = ValueAnimator.ofFloat(drawable?.cornerRadius ?: 0f, targetCornerRadius.toFloat())
+    val widthAnimator = ValueAnimator.ofInt(binding.actionButton.measuredWidth, targetWidth)
+    val progressBarAlphaAnimator = ObjectAnimator.ofFloat(binding.progressBar, "alpha",0f,1f)
+
+    cornerAnimator.duration = 1000
+    widthAnimator.duration = 1000
+    progressBarAlphaAnimator.duration = 1000
+
+    cornerAnimator.addUpdateListener {
+      drawable?.cornerRadius = it.animatedValue as Float
+      binding.actionButton.background = drawable
+    }
+
+    widthAnimator.addUpdateListener {
+      binding.actionButton.updateLayoutParams {
+        this.width = it.animatedValue as Int
+      }
+
+      binding.actionButton.textSize = 1f - it.animatedFraction
+    }
+
+    binding.progressBar.alpha = 0f
+    binding.progressBar.visibility = View.VISIBLE
+
+    widthAnimator.start()
+    cornerAnimator.start()
+    progressBarAlphaAnimator.start()
+  }
+```
+
+
