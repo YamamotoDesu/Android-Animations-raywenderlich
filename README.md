@@ -87,3 +87,10 @@ Each edition has its own branch, named `versions/[VERSION]`. The default branch 
     
 ```
 
+## Object Property Animations
+```kt
+    val progressBarAlphaAnimator = ObjectAnimator.ofFloat(binding.progressBar,"alpha", 0f, 1f)
+    progressBarAlphaAnimator.duration = 3000
+    progressBarAlphaAnimator.interpolator = BounceInterpolator()
+```
+
