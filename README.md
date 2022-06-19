@@ -78,4 +78,9 @@ Each edition has its own branch, named `versions/[VERSION]`. The default branch 
   </tr>
 </table>
 
+```kt
+    alphaAnimator.interpolator = DecelerateInterpolator()
+    alphaAnimator.interpolator = AccelerateInterpolator()
+    
+```
 
